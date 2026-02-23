@@ -191,19 +191,47 @@ body {
       }
 
       .mask {
-        @apply absolute h-full top-0 lg:-top-20 xl:top-0;
+  position: absolute;
+  top: 0;
+  height: auto;       /* natural height on small screens */
 
-        img {
-          @apply h-full scale-150 lg:scale-100;
-          transform: matrix(80, 0, 0, 80, 0, 0);
-        }
+  img {
+    height: auto;
+    max-height: 100%;
+    width: auto;
+    transform: none;   /* remove matrix for small screens */
+    scale: 1.3;
+  }
+}
 
-        @media (max-width: 1024px) {
-          img {
-            transform: matrix(1, 0, 0, 1, 0, 0);
-          }
-        }
-      }
+/* Large screens (lg ≥ 1024px) */
+@media (min-width: 1024px) {
+  .mask {
+    height: 100%;    /* full height */
+    top: -420px;      /* your original offset */
+  }
+
+  .mask img {
+    height: 100%;
+    width: auto;
+    scale: 1;        /* adjust if needed */
+    transform: matrix(80, 0, 0, 80, 0, 0); /* original transform */
+  }
+}
+
+/* Extra large screens (xl ≥ 1280px) */
+@media (min-width: 1280px) {
+  .mask {
+    height: 100%;
+    top: 0;
+  }
+
+  .mask img {
+    height: 100%;
+    width: auto;
+    transform: matrix(80, 0, 0, 80, 0, 0);
+  }
+}
     }
 
     .content {
