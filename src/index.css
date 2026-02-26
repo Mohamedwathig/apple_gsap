@@ -208,7 +208,7 @@ body {
 @media (min-width: 1024px) {
   .mask {
     height: 100%;    /* full height */
-    top: -420px;      /* your original offset */
+    top: -500px;      /* your original offset */
   }
 
   .mask img {
