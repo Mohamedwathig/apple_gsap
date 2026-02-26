@@ -25,8 +25,8 @@ const Hero = () => {
       })
 
       tl.to(logoRef.current, {
-        scale: 20,
-        opacity: 0,
+        scale: 100,
+        opacity: 1,
         ease: 'power1.in',
       })
 
@@ -59,7 +59,7 @@ const Hero = () => {
         <img
           ref={logoRef}
           className="w-40 h-40 object-contain"
-          src="/apple logo.jpg"
+          src="/apple logo.png"
           alt="Apple Logo"
           style={{ transformOrigin: 'center center' }}
         />
@@ -71,7 +71,7 @@ const Hero = () => {
       {/* ── Section 2 – MacBook + video ── */}
       <section className="min-h-screen bg-black flex flex-col items-center pt-20 gap-8">
         <div className="text-center">
-          <h1 className="text-white text-5xl font-semibold">MacBook</h1>
+          {/* <h1 className="text-white text-5xl font-semibold">MacBook</h1> */}
           <img src="/title.png" alt="MacBook Title" className="mx-auto mt-4" />
         </div>
 
